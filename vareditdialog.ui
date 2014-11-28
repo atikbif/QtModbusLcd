@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VarEditDialog</class>
+ <widget class="QDialog" name="VarEditDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>427</width>
+    <height>289</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Свойства переменной</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0" colspan="3">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Сетевой адрес контроллера:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QSpinBox" name="spinBoxNetAddress">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="5">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Добавочное значение:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="6">
+      <widget class="QDoubleSpinBox" name="doubleSpinBoxAdd">
+       <property name="minimum">
+        <double>-30000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>30000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2" colspan="2">
+      <widget class="QComboBox" name="comboBoxVarsType"/>
+     </item>
+     <item row="3" column="5" colspan="2">
+      <widget class="QCheckBox" name="checkBoxVarEdit">
+       <property name="text">
+        <string>Редактирование с пульта</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="3">
+      <widget class="QLineEdit" name="lineEditName"/>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Адрес ячейки памяти:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QSpinBox" name="spinBoxMemAddress">
+       <property name="prefix">
+        <string>0x</string>
+       </property>
+       <property name="maximum">
+        <number>65535</number>
+       </property>
+       <property name="displayIntegerBase">
+        <number>16</number>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="7">
+      <widget class="QGroupBox" name="groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>361</width>
+         <height>111</height>
+        </size>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QRadioButton" name="radioButtonWithoutGroup">
+            <property name="text">
+             <string>без группы</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QRadioButton" name="radioButtonExistGroup">
+            <property name="text">
+             <string>поместить в существующую группу</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboBoxGroups"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QRadioButton" name="radioButtonNewGroup">
+            <property name="text">
+             <string>создать новую группу для переменной</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineEditNewGroup"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Имя:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Тип переменной:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Описание</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="3">
+      <widget class="QLineEdit" name="lineEditComment"/>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Коэффициент:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QDoubleSpinBox" name="doubleSpinBoxCoeff">
+       <property name="minimum">
+        <double>-1000.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="4">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButtonEscape">
+         <property name="text">
+          <string>Отмена</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonOK">
+         <property name="text">
+          <string>OK</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="4" column="5" colspan="2">
+      <widget class="QCheckBox" name="checkBoxSign">
+       <property name="text">
+        <string>Отрицательные значения</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButtonEscape</sender>
+   <signal>clicked()</signal>
+   <receiver>VarEditDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

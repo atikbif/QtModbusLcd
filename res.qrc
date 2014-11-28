@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>opts_32.ico</file>
+        <file>add_32.ico</file>
+        <file>apps_32.ico</file>
+        <file>trash_32.ico</file>
+        <file>down_32.ico</file>
+        <file>copy_32.ico</file>
+        <file>paste_32.ico</file>
+        <file>up_32.ico</file>
+        <file>edit_32.ico</file>
+        <file>exp_32.ico</file>
+        <file>impt_32.ico</file>
+        <file>new_32.ico</file>
+        <file>open_32.ico</file>
+        <file>save_32.ico</file>
+        <file>about_32.ico</file>
+        <file>hd_32.ico</file>
+    </qresource>
+</RCC>

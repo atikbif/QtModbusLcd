@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VarConfigDialog</class>
+ <widget class="QDialog" name="VarConfigDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>626</width>
+    <height>367</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Настройка переменных</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QPushButton" name="AddVarPushButton">
+       <property name="text">
+        <string>Доб. перем.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QTreeWidget" name="treeWidget">
+       <column>
+        <property name="text">
+         <string notr="true">Список переменных проекта</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="DelVarPushButton">
+       <property name="text">
+        <string>Уд. перем.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" rowspan="2">
+      <widget class="QGroupBox" name="groupBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>2</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Имя:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" colspan="6">
+             <widget class="QLineEdit" name="lineEditName">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Описание:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" colspan="5">
+             <widget class="QLineEdit" name="lineEditComment">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="6">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Сетевой адрес контроллера:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="6">
+             <widget class="QLineEdit" name="lineEditNetAddress">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="3">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Тип переменной:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3" colspan="4">
+             <widget class="QLineEdit" name="lineEditType">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="4">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Адрес ячейки памяти:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="4" colspan="3">
+             <widget class="QLineEdit" name="lineEditMemAddr">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="3">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Коэффициент:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="3" colspan="4">
+             <widget class="QLineEdit" name="lineEditCoeff">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="4">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Добавочное значение:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="4" colspan="3">
+             <widget class="QLineEdit" name="lineEditAdd">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0" colspan="3">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Ввод с пульта:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="3" colspan="4">
+             <widget class="QLineEdit" name="lineEditEdit">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0" colspan="5">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Отрицательные значения:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="5" colspan="2">
+             <widget class="QLineEdit" name="lineEditSign"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="1">
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>228</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="pushButtonEditVar">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Редактировать</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
