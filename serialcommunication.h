@@ -9,6 +9,7 @@
 #include "displaydata.h"
 #include "epsonfont.h"
 #include "listofvars.h"
+#include <QStringList>
 
 class SerialCommunication : public QThread
 {
@@ -24,6 +25,7 @@ public:
     void setData(DisplayData* dataPtr);
     void setFont(EpsonFont* fontPtr);
     void setVars(ListOfVars* listVars) {lVars = listVars;}
+    void setStrNumVars(QStringList vNames);
 signals:
     void searchStep(float currentStage);
     void searchError(const QString &errMessage);
@@ -50,6 +52,7 @@ private:
     bool startWrite,writeCmd;
     QString savePortName;
     quint32 savePortBaud;
+    QStringList strNumVars;
 };
 
 #endif // SERIALCOMMUNICATION_H

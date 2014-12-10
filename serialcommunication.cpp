@@ -242,7 +242,7 @@ void SerialCommunication::run()
                     wrBufSize += vSize * lVars->getAllVars().count();
 
                     // vars on lcd
-                    const unsigned char vSizeLcd = 7;
+                    const unsigned char vSizeLcd = 8;
                     wrBufSize += vSizeLcd * getVarsAmountOnLcd();
 
 
@@ -271,6 +271,30 @@ void SerialCommunication::run()
                     // amount of requests
                     wrData[8+rowCount*2] = reqCnt & 0xFF;
                     wrData[9+rowCount*2] = reqCnt >> 8;
+
+                    // id values of vars with display's strings' numbers
+                    if(strNumVars.count()==4)
+                    {
+                        quint8 flag = 0;
+                        for(int i=0;i<4;i++) if(!strNumVars[i].contains("без привязки")) flag |= 1<<i;
+                        wrData[10+rowCount*2] = flag;
+                        for(int i=0;i<4;i++)
+                        {
+                            wrData[11+rowCount*2 + i*2] = 0;
+                            wrData[11+rowCount*2 + i*2 + 1] = 0;
+                            quint16 j=0;
+                            foreach(modbusVar* var,lVars->getAllVars())
+                            {
+                                if(var->getName() == strNumVars[i])
+                                {
+                                    wrData[11+rowCount*2 + i*2] = j & 0xFF;
+                                    wrData[11+rowCount*2 + i*2 + 1] = j >> 8;
+                                    break;
+                                }
+                                j++;
+                            }
+                        }
+                    }
 
                     quint32 bufPos = pageSize*1;
                     for(int i=0;i<rowCount;i++)
@@ -401,7 +425,7 @@ void SerialCommunication::run()
                                         int varIndex = 0;
                                         for(int n=0;n<lVars->getAllVars().count();n++)
                                         {
-                                            if(lVars->getAllVars().at(i)->getName() == vName)
+                                            if(lVars->getAllVars().at(n)->getName() == vName)
                                             {
                                                 varIndex = n;
                                                 break;
@@ -409,6 +433,7 @@ void SerialCommunication::run()
                                         }
                                         wrData[bufPos++] = varIndex & 0xFF;
                                         wrData[bufPos++] = varIndex >> 8;
+                                        wrData[bufPos++] = 0; // reserved
                                     }
                                 }
                             }
@@ -522,6 +547,11 @@ void SerialCommunication::setData(DisplayData *dataPtr)
 void SerialCommunication::setFont(EpsonFont *fontPtr)
 {
     this->fontPtr = fontPtr;
+}
+
+void SerialCommunication::setStrNumVars(QStringList vNames)
+{
+    strNumVars = vNames;
 }
 
 int SerialCommunication::getVarsAmountOnLcd()

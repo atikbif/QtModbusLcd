@@ -295,6 +295,7 @@ void MainWindow::dataToPLC()
     CommunicationDialog* dialog = new CommunicationDialog;
     link.setData(lcd->getData());
     link.setFont(font);
+    link.setStrNumVars(strVars);
     dialog->setMessage("Поиск устройства");
     connect(&link,SIGNAL(searchStep(float)),dialog,SLOT(updatePercent(float)));
     connect(&link,SIGNAL(searchError(QString)),dialog,SLOT(setMessage(QString)));
